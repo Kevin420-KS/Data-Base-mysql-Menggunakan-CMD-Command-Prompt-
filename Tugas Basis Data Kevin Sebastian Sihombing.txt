@@ -1,0 +1,77 @@
+Microsoft Windows [Version 10.0.22631.4169]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ASUS>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 18
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database praktikum;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> use praktikum;
+Database changed
+MariaDB [praktikum]> create table praktikum (
+    -> nama char (255),
+    -> nim int,
+    -> hari char (255),
+    -> tanggal date,
+    -> waktu time,
+    -> ruangan char(255) );
+Query OK, 0 rows affected (0.025 sec)
+
+MariaDB [praktikum]> INSERT INTO praktikum (nama, nim, hari, tanggal, waktu, ruangan)
+    -> value ('Kevin Sebastian Sihombing', '20230801', 'Senin', '2024-04-20', '07:30', 'CR.A.404');
+Query OK, 1 row affected (0.017 sec)
+
+MariaDB [praktikum]> SELECT * FROM praktikum;
++---------------------------+----------+-------+------------+----------+----------+
+| nama                      | nim      | hari  | tanggal    | waktu    | ruangan  |
++---------------------------+----------+-------+------------+----------+----------+
+| Kevin Sebastian Sihombing | 20230801 | Senin | 2024-04-20 | 07:30:00 | CR.A.404 |
++---------------------------+----------+-------+------------+----------+----------+
+1 row in set (0.000 sec)
+
+MariaDB [praktikum]> INSERT INTO praktikum (nama, nim, hari, tanggal, waktu, ruangan)
+    -> value ('Ucup Kangkung', '20230802', 'Selasa', '2024-08-13', '09:30', 'CR.C.404');
+Query OK, 1 row affected (0.015 sec)
+
+MariaDB [praktikum]> SELECT * FROM praktikum;
++---------------------------+----------+--------+------------+----------+----------+
+| nama                      | nim      | hari   | tanggal    | waktu    | ruangan  |
++---------------------------+----------+--------+------------+----------+----------+
+| Kevin Sebastian Sihombing | 20230801 | Senin  | 2024-04-20 | 07:30:00 | CR.A.404 |
+| Ucup Kangkung             | 20230802 | Selasa | 2024-08-13 | 09:30:00 | CR.C.404 |
++---------------------------+----------+--------+------------+----------+----------+
+2 rows in set (0.000 sec)
+
+AND nim = '20230802',
+AND hari = 'Selasa',
+AND tanggal = '2024-08-13',
+AND w...' at line 2
+MariaDB [praktikum]> DELETE FROM praktikum
+    -> WHERE nama = 'Ucup Kangkung'
+    -> AND nim = '20230802'
+    -> AND hari = 'Selasa'
+    -> AND tanggal = '2024-08-13'
+    -> AND waktu = '09:30'
+    -> AND ruangan = 'CR.C.404';
+Query OK, 1 row affected (0.015 sec)
+
+MariaDB [praktikum]> SELECT * FROM praktikum;
++---------------------------+----------+-------+------------+----------+----------+
+| nama                      | nim      | hari  | tanggal    | waktu    | ruangan  |
++---------------------------+----------+-------+------------+----------+----------+
+| Kevin Sebastian Sihombing | 20230801 | Senin | 2024-04-20 | 07:30:00 | CR.A.404 |
++---------------------------+----------+-------+------------+----------+----------+
+1 row in set (0.000 sec)
+
+MariaDB [(none)]> drop database praktikum;
+Query OK, 1 row affected (0.019 sec)
