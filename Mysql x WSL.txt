@@ -73,9 +73,9 @@ Query OK, 1 row affected (0.015 sec)
 
 MariaDB [praktikum]> SELECT * FROM praktikum;
 +---------------------------+----------+-------+------------+----------+----------+
-| nama                      | nim      | hari  | tanggal    | waktu    | ruangan  |
+| nama     | nim      | hari  | tanggal    | waktu    | ruangan  |
 +---------------------------+----------+-------+------------+----------+----------+
-| Kevin Sebastian Sihombing | 20230801 | Senin | 2024-04-20 | 07:30:00 | CR.A.404 |
+| Kevin    | 20230801 | Senin | 2024-04-20 | 07:30:00 | CR.A.404 |
 +---------------------------+----------+-------+------------+----------+----------+
 1 row in set (0.000 sec)
 
